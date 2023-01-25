@@ -37,7 +37,7 @@ localparam STRB_WIDTH = BYTE_WRITE ? (DATA_WIDTH/8) : 1;
 
     output logic     dvalb;
     
-    logic [DATA_WIDTH-1:0] temp_read = 0;
+    logic [DATA_WIDTH-1:0] temp_read = 0; //registers to get 2 cycle delay for reading memory
 
      logic [DATA_WIDTH-1:0] temp_read2 = 0;
  
@@ -81,7 +81,7 @@ if (wena) mem[addra] <= dina;
 always @(posedge clk)
   if (renb) 
   begin
-  temp_read  <= mem[addrb];
+  temp_read  <= mem[addrb];   // 2cycle to read from memory
   temp_read2 <= temp_read;
   doutb <= temp_read2;
   if (mem[addrb] == temp_read) dvalb <= 1;

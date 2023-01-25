@@ -21,7 +21,7 @@ module simple_dual_port_ram (
  
 
 logic [ifp.DATA_WIDTH-1:0] mem [ifp.MEM_DEPTH];
-logic [ifp.DATA_WIDTH-1:0] temp_read = 0;
+logic [ifp.DATA_WIDTH-1:0] temp_read = 0;  //registers to get 2 cycle delay for reading memory
 logic [ifp.DATA_WIDTH-1:0] temp_read2 = 0;
 
 
@@ -39,8 +39,8 @@ if (ifp.wena) mem[ifp.addra] <= ifp.dina;
 always @(posedge clk)
   if (ifp.renb) 
   begin
-  temp_read  <= mem[ifp.addrb];
-  temp_read2 <= temp_read;
+  temp_read  <= mem[ifp.addrb];        // 2cycle to read from memory
+  temp_read2 <= temp_read;       
   ifp.doutb <= temp_read2;
   if (mem[ifp.addrb] == temp_read) ifp.dvalb <= 1;
   else ifp.dvalb <= 0;
