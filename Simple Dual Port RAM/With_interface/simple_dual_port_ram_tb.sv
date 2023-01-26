@@ -12,7 +12,7 @@ end
 
 
 
-sdpram_if.sdp_s ifp;
+sdpram_if ifp();
 
 simple_dual_port_ram DUT(
 
@@ -27,30 +27,30 @@ simple_dual_port_ram DUT(
   initial begin
   
   #(CLK_PERIOD / 2);
-inf.wena = 1'b1;
-  inf.addra = 10'd5;
-  inf.dina= 32'd350;
+ifp.wena = 1'b1;
+  ifp.addra = 10'd5;
+  ifp.dina= 32'd350;
   
   #(CLK_PERIOD * 2);
-  inf.wena = 1'b1;
-  inf.addra = 10'd7;
-  inf.dina= 32'd670;
+  ifp.wena = 1'b1;
+  ifp.addra = 10'd7;
+  ifp.dina= 32'd670;
   
   #(CLK_PERIOD * 2);
-   inf.wena = 1'b0;
-   inf.renb= 1'b1;
-   inf.addrb = 10'd5;
+   ifp.wena = 1'b0;
+   ifp.renb= 1'b1;
+   ifp.addrb = 10'd5;
    
    #(CLK_PERIOD);
-    inf.renb= 1'b1;
-    inf.addrb = 10'd7;
+    ifp.renb= 1'b1;
+    ifp.addrb = 10'd7;
        
    #(CLK_PERIOD *3);
-     inf.wena = 1'b1;
-     inf.addra = 10'd5;
-     inf.dina= 32'd961;
-     inf.renb= 1'b1;
-     inf.addrb = 10'd5;
+     ifp.wena = 1'b1;
+     ifp.addra = 10'd5;
+     ifp.dina= 32'd961;
+     ifp.renb= 1'b1;
+     ifp.addrb = 10'd5;
      
        #(CLK_PERIOD *3);
      
