@@ -86,4 +86,3 @@ interface sdpram_if#(
     
 
 endinterface
-
