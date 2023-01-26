@@ -1,3 +1,7 @@
+// Code your testbench here
+// or browse Examples
+`include "interface.sv";
+
 module sdpr_tb;
 
 logic clk;
@@ -25,8 +29,9 @@ simple_dual_port_ram DUT(
     );
 
   initial begin
-  
-  #(CLK_PERIOD / 2);
+    
+/*  $dumpfile("dump.vcd"); $dumpvars;*/
+     #(CLK_PERIOD * 2);
 ifp.wena = 1'b1;
   ifp.addra = 10'd5;
   ifp.dina= 32'd350;
