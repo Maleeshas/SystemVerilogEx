@@ -31,7 +31,7 @@ simple_dual_port_ram DUT(
  // defined to imitate memory behavior   
 logic [ifp.DATA_WIDTH-1:0] mem_chk [ifp.MEM_DEPTH];// local memory created in testbench
 bit [ifp.ADDR_WIDTH-1:0]  addra;   
-bit [ifp.STRB_WIDTH-1:0]   wena;
+bit    wena;
 bit [ifp.DATA_WIDTH-1:0]  dina;  
 bit [ifp.ADDR_WIDTH-1:0]  addrb;   
 bit   renb;
@@ -41,10 +41,12 @@ bit    dvalb;
 initial repeat(REPETITONS ) begin // random number writing to memory while writing same in the local memory created
 addra = $random ;
 dina = $random;
+wena = $random;
 #(CLK_PERIOD * 2);
-ifp.wena = 1'b1;
+ifp.wena = wena;
 ifp.addra = addra;
 ifp.dina= dina;
+if (wena)
 mem_chk[addra] = dina;  // writing to local memory
 
 end
