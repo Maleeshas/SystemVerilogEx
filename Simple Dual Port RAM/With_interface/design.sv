@@ -1,6 +1,4 @@
-
 `timescale 1ns / 1ps
-
 
 module simple_dual_port_ram (
 
@@ -34,14 +32,15 @@ if (ifp.wena) mem[ifp.addra] <= ifp.dina;
 //read data from memory
 always @(posedge clk)
   begin
-  renb1 <= renb;
+  renb1 <= ifp.renb;    //make read enable high when the desired data is availble to make the dval high
   renb2 <= renb1;
-  
+
   temp_read  <= mem[ifp.addrb];        // 2cycle to read from memory
   temp_read2 <= temp_read;       
   ifp.doutb <= temp_read2;
 
-  if (renb2) ifp.dvalb <= 1;
+
+  if (renb2) ifp.dvalb <= 1;  //making dval high when the requested data is available in dvalb
   else ifp.dvalb <= 0;
   end
   
