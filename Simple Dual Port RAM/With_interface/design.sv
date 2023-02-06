@@ -1,4 +1,4 @@
-// Code your design here
+
 `timescale 1ns / 1ps
 
 
@@ -24,13 +24,8 @@ module simple_dual_port_ram (
 logic [ifp.DATA_WIDTH-1:0] mem [ifp.MEM_DEPTH];
 logic [ifp.DATA_WIDTH-1:0] temp_read = 0;  //registers to get 2 cycle delay for reading memory
 logic [ifp.DATA_WIDTH-1:0] temp_read2 = 0;
+logic renb1,renb2;
 
-
-///Reset
-always @(posedge rst)
-  for(int i=0;i<ifp.MEM_DEPTH;i++)begin
-mem[i]=32'hFFFFFFFF;
-end
 
 always @(posedge clk)
 if (ifp.wena) mem[ifp.addra] <= ifp.dina;
@@ -38,12 +33,15 @@ if (ifp.wena) mem[ifp.addra] <= ifp.dina;
   
 //read data from memory
 always @(posedge clk)
-  if (ifp.renb) 
   begin
+  renb1 <= renb;
+  renb2 <= renb1;
+  
   temp_read  <= mem[ifp.addrb];        // 2cycle to read from memory
   temp_read2 <= temp_read;       
   ifp.doutb <= temp_read2;
-  if (mem[ifp.addrb] == temp_read) ifp.dvalb <= 1;
+
+  if (renb2) ifp.dvalb <= 1;
   else ifp.dvalb <= 0;
   end
   

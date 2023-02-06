@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sdpr_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sdpr_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="29,999,982 ps"></ZoomStartTime>
+      <ZoomEndTime time="30,000,004 ps"></ZoomEndTime>
+      <Cursor1Time time="30,000,000 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject type="logic" fp_name="/sdpr_tb/clk_tb">
+      <obj_property name="ElementShortName">clk_tb</obj_property>
+      <obj_property name="ObjectShortName">clk_tb</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/sdpr_tb/clk_tb2">
+      <obj_property name="ElementShortName">clk_tb2</obj_property>
+      <obj_property name="ObjectShortName">clk_tb2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/sdpr_tb/rst_tb">
+      <obj_property name="ElementShortName">rst_tb</obj_property>
+      <obj_property name="ObjectShortName">rst_tb</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/mem_chk">
+      <obj_property name="ElementShortName">mem_chk[0:1023][31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_chk[0:1023][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/addra">
+      <obj_property name="ElementShortName">addra[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/sdpr_tb/wena">
+      <obj_property name="ElementShortName">wena</obj_property>
+      <obj_property name="ObjectShortName">wena</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/dina">
+      <obj_property name="ElementShortName">dina[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/addrb">
+      <obj_property name="ElementShortName">addrb[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addrb[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/sdpr_tb/renb">
+      <obj_property name="ElementShortName">renb</obj_property>
+      <obj_property name="ObjectShortName">renb</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/REPETITONS">
+      <obj_property name="ElementShortName">REPETITONS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REPETITONS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/CLK_PERIOD">
+      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/addra">
+      <obj_property name="ElementShortName">addra[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/wena">
+      <obj_property name="ElementShortName">wena[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wena[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/dina">
+      <obj_property name="ElementShortName">dina[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/addrb">
+      <obj_property name="ElementShortName">addrb[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addrb[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/sdpr_tb/DUT/ifp/renb">
+      <obj_property name="ElementShortName">renb</obj_property>
+      <obj_property name="ObjectShortName">renb</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/doutb">
+      <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/sdpr_tb/DUT/ifp/dvalb">
+      <obj_property name="ElementShortName">dvalb</obj_property>
+      <obj_property name="ObjectShortName">dvalb</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/DATA_WIDTH">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/MEM_DEPTH">
+      <obj_property name="ElementShortName">MEM_DEPTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_DEPTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/BYTE_WRITE">
+      <obj_property name="ElementShortName">BYTE_WRITE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BYTE_WRITE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/ADDR_WIDTH">
+      <obj_property name="ElementShortName">ADDR_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ADDR_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/sdpr_tb/DUT/ifp/STRB_WIDTH">
+      <obj_property name="ElementShortName">STRB_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">STRB_WIDTH[31:0]</obj_property>
+   </wvobject>
+</wave_config>
