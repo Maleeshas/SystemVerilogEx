@@ -14,8 +14,10 @@ logic [ifp_ram.ADDR_WIDTH:0] fifo_cnt = 0; //vary from 0-1024
 
 
 always @(fifo_cnt) begin
-    assign ifp_ff.empty = (fifo_cnt==0);
-    assign ifp_ff.full = (fifo_cnt==1024);
+    ifp_ff.empty = (fifo_cnt==0);
+    ifp_ff.full = (fifo_cnt==1024);
+    ifp_ff.almost_empty = (fifo_cnt==4);
+    ifp_ff.almost_full = (fifo_cnt==1020);
 end
 
 always @(posedge clk)begin
