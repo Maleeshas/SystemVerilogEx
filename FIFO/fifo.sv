@@ -43,11 +43,17 @@ always @(posedge clk)begin
     if (ifp_ff.ren && !ifp_ff.empty)begin
         ifp_ram.addrb <= rd_pt;
         ifp_ram.renb <= 1'b1;
-        if (ifp_ram.dvalb)begin
-            ifp_ff.rdata <= ifp_ram.doutb;  //need to add 2 clock cycle delay
-        end
+       
+        
     end
-    else ifp_ff.rdata <= ifp_ram.doutb;
+    else begin 
+    ifp_ff.rdata <= ifp_ram.doutb;
+    if (ifp_ram.dvalb)begin
+            ifp_ff.rdata <= ifp_ram.doutb;  //need to add 2 clock cycle delay
+            ifp_ff.rvalid <= 1'b1;
+            end
+    else    ifp_ff.rvalid<=1'b0;
+    end
 
 
 end
